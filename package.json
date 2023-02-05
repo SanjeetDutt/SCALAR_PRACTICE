@@ -1,0 +1,22 @@
+{
+  "name": "scalar_practice",
+  "version": "1.0.0",
+  "description": "This project is for excersise scalar questions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanjeetDutt/SCALAR_PRACTICE.git"
+  },
+  "author": "Sanjeet Dutt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanjeetDutt/SCALAR_PRACTICE/issues"
+  },
+  "homepage": "https://github.com/SanjeetDutt/SCALAR_PRACTICE#readme",
+  "devDependencies": {
+    "jest": "^29.4.1"
+  }
+}
