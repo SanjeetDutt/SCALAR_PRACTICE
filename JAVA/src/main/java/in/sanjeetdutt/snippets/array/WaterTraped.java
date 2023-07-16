@@ -2,7 +2,10 @@ package in.sanjeetdutt.snippets.array;
 
 /**
  * Given an int array = height of building, find water trap.
- * <a href="https://drive.google.com/file/d/1pOOl7bexrqCfNTQ9_B0p-wr9YXPLwKr1/view?usp=drive_link">SOLUTION</a>
+ * <a href="https://drive.google.com/file/d/1pOOl7bexrqCfNTQ9_B0p-wr9YXPLwKr1/view?usp=drive_link">SOLUTION 1</a>
+ * OBSERVATION: In maxOnRight and maxOnLeft array we are storing value just to compare the limit which can be replaced by a variable, hence space complexity can be optimized
+ *  <a href="https://drive.google.com/file/d/1pYJ8N6NlWrALYV-vKY1Ms775w5Y_AXde/view?usp=sharing">SOLUTION Optimized</a>
+ * Space complexity improved to O(1)
  */
 public class WaterTraped {
     int find(int[] buildingHeight){
@@ -42,5 +45,30 @@ public class WaterTraped {
         }
 
         return maxHeight;
+    }
+
+    int optimizedAnswer(int[] buildingHeight){
+        int L = 0;
+        int R = buildingHeight.length-1;
+        int MaxL = buildingHeight[L];
+        int MaxR = buildingHeight[R];
+        int answer = 0;
+
+        while (L < R){
+            int Al = buildingHeight[L];
+            int Ar = buildingHeight[R];
+            MaxL = Integer.max(MaxL, Al);
+            MaxR = Integer.max(MaxR, Ar);
+
+            answer += Integer.min(MaxL,MaxR) - Integer.min(Al,Ar);
+
+            if(Al < Ar){
+                L++;
+            } else{
+                R--;
+            }
+        }
+
+        return answer;
     }
 }

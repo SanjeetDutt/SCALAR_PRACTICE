@@ -23,4 +23,11 @@ class WaterTrapedTest {
     void getMaxHeightOnRight() {
         assertArrayEquals(waterTraped.getMaxHeightOnRight(building), new int[]{5,5,5,5,5,5,4,4,0});
     }
+
+    @Test
+    void optimizedAnswer() {
+        assertEquals(waterTraped.optimizedAnswer(building),13);
+
+        assertEquals(waterTraped.optimizedAnswer(new int[]{3,0,6,3,2,4,1,3,5,3,4}),16);
+    }
 }
